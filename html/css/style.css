@@ -1,3 +1,15 @@
+nav {
+    -webkit-app-region: drag;
+}
+
+nav a {
+    -webkit-app-region: no-drag;
+}
+
+#close-btn {
+    -webkit-app-region: no-drag;
+}
+
 .container {
     padding: 20px 0;
 }
@@ -30,4 +42,9 @@ td {
 
 li {
     list-style: none;
+}
+
+.fretboard {
+    width: 771px;
+    margin: 20px auto;
 }

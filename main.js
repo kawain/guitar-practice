@@ -10,11 +10,13 @@ let win
 
 function createWindow() {
     win = new BrowserWindow({
-        width: 800,
+        backgroundColor: "#222",
+        width: 900,
         height: 700,
         webPreferences: {
             nodeIntegration: true
         },
+        frame: false,
         show: false
     })
 
