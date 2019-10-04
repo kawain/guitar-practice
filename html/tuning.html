@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>チューニング</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="tuning.html">チューニング</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="basic.html">指板の音</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="triad.html">トライアド</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="chord.html">コード</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="metronome.html">メトロノーム</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <p>指板の音を覚えましょう。音階名横の数字はオクターブの高さを表します。</p>
+
+        <div class="my-4 text-center">
+            <label for="volume">Volume(<span id="volumeValue"></span>)</label>
+            <div><input type="range" id="volume" min="-30" max="30"></div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>開放弦</th>
+                    <td><button class="btn btn-primary btn-sm">E2</button></td>
+                    <td><button class="btn btn-primary btn-sm">A2</button></td>
+                    <td><button class="btn btn-primary btn-sm">D3</button></td>
+                    <td><button class="btn btn-primary btn-sm">G3</button></td>
+                    <td><button class="btn btn-primary btn-sm">B3</button></td>
+                    <td><button class="btn btn-primary btn-sm">E4</button></td>
+                </tr>
+                <tr>
+                    <th>フレット</th>
+                    <th>6弦</th>
+                    <th>5弦</th>
+                    <th>4弦</th>
+                    <th>3弦</th>
+                    <th>2弦</th>
+                    <th>1弦</th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <td><button class="btn btn-primary btn-sm">F2</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb2</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Ab3</button></td>
+                    <td><button class="btn btn-primary btn-sm">C4</button></td>
+                    <td><button class="btn btn-primary btn-sm">F4</button></td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td><button class="btn btn-secondary btn-sm">F#2</button></td>
+                    <td><button class="btn btn-primary btn-sm">B2</button></td>
+                    <td><button class="btn btn-primary btn-sm">E3</button></td>
+                    <td><button class="btn btn-primary btn-sm">A3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">C#4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">F#4</button></td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td><button class="btn btn-primary btn-sm">G2</button></td>
+                    <td><button class="btn btn-primary btn-sm">C3</button></td>
+                    <td><button class="btn btn-primary btn-sm">F3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb3</button></td>
+                    <td><button class="btn btn-primary btn-sm">D4</button></td>
+                    <td><button class="btn btn-primary btn-sm">G4</button></td>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <td><button class="btn btn-secondary btn-sm">Ab2</button></td>
+                    <td><button class="btn btn-secondary btn-sm">C#3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">F#3</button></td>
+                    <td><button class="btn btn-primary btn-sm">B3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Ab4</button></td>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <td><button class="btn btn-primary btn-sm">A2</button></td>
+                    <td><button class="btn btn-primary btn-sm">D3</button></td>
+                    <td><button class="btn btn-primary btn-sm">G3</button></td>
+                    <td><button class="btn btn-primary btn-sm">C4</button></td>
+                    <td><button class="btn btn-primary btn-sm">E4</button></td>
+                    <td><button class="btn btn-primary btn-sm">A4</button></td>
+                </tr>
+                <tr>
+                    <th>6</th>
+                    <td><button class="btn btn-secondary btn-sm">Bb2</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Ab3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">C#4</button></td>
+                    <td><button class="btn btn-primary btn-sm">F4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb4</button></td>
+                </tr>
+                <tr>
+                    <th>7</th>
+                    <td><button class="btn btn-primary btn-sm">B2</button></td>
+                    <td><button class="btn btn-primary btn-sm">E3</button></td>
+                    <td><button class="btn btn-primary btn-sm">A3</button></td>
+                    <td><button class="btn btn-primary btn-sm">D4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">F#4</button></td>
+                    <td><button class="btn btn-primary btn-sm">B4</button></td>
+                </tr>
+                <tr>
+                    <th>8</th>
+                    <td><button class="btn btn-primary btn-sm">C3</button></td>
+                    <td><button class="btn btn-primary btn-sm">F3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb4</button></td>
+                    <td><button class="btn btn-primary btn-sm">G4</button></td>
+                    <td><button class="btn btn-primary btn-sm">C5</button></td>
+                </tr>
+                <tr>
+                    <th>9</th>
+                    <td><button class="btn btn-secondary btn-sm">C#3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">F#3</button></td>
+                    <td><button class="btn btn-primary btn-sm">B3</button></td>
+                    <td><button class="btn btn-primary btn-sm">E4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Ab4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">C#5</button></td>
+                </tr>
+                <tr>
+                    <th>10</th>
+                    <td><button class="btn btn-primary btn-sm">D3</button></td>
+                    <td><button class="btn btn-primary btn-sm">G3</button></td>
+                    <td><button class="btn btn-primary btn-sm">C4</button></td>
+                    <td><button class="btn btn-primary btn-sm">F4</button></td>
+                    <td><button class="btn btn-primary btn-sm">A4</button></td>
+                    <td><button class="btn btn-primary btn-sm">D5</button></td>
+                </tr>
+                <tr>
+                    <th>11</th>
+                    <td><button class="btn btn-secondary btn-sm">Eb3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Ab3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">C#4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">F#4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb5</button></td>
+                </tr>
+                <tr>
+                    <th>12</th>
+                    <td><button class="btn btn-primary btn-sm">E3</button></td>
+                    <td><button class="btn btn-primary btn-sm">A3</button></td>
+                    <td><button class="btn btn-primary btn-sm">D4</button></td>
+                    <td><button class="btn btn-primary btn-sm">G4</button></td>
+                    <td><button class="btn btn-primary btn-sm">B4</button></td>
+                    <td><button class="btn btn-primary btn-sm">E5</button></td>
+                </tr>
+                <tr>
+                    <th>13</th>
+                    <td><button class="btn btn-primary btn-sm">F3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Ab4</button></td>
+                    <td><button class="btn btn-primary btn-sm">C5</button></td>
+                    <td><button class="btn btn-primary btn-sm">F5</button></td>
+                </tr>
+                <tr>
+                    <th>14</th>
+                    <td><button class="btn btn-secondary btn-sm">F#3</button></td>
+                    <td><button class="btn btn-primary btn-sm">B3</button></td>
+                    <td><button class="btn btn-primary btn-sm">E4</button></td>
+                    <td><button class="btn btn-primary btn-sm">A4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">C#5</button></td>
+                    <td><button class="btn btn-secondary btn-sm">F#5</button></td>
+                </tr>
+                <tr>
+                    <th>15</th>
+                    <td><button class="btn btn-primary btn-sm">G3</button></td>
+                    <td><button class="btn btn-primary btn-sm">C4</button></td>
+                    <td><button class="btn btn-primary btn-sm">F4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb4</button></td>
+                    <td><button class="btn btn-primary btn-sm">D5</button></td>
+                    <td><button class="btn btn-primary btn-sm">G5</button></td>
+                </tr>
+                <tr>
+                    <th>16</th>
+                    <td><button class="btn btn-secondary btn-sm">Ab3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">C#4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">F#4</button></td>
+                    <td><button class="btn btn-primary btn-sm">B4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb5</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Ab5</button></td>
+                </tr>
+                <tr>
+                    <th>17</th>
+                    <td><button class="btn btn-primary btn-sm">A3</button></td>
+                    <td><button class="btn btn-primary btn-sm">D4</button></td>
+                    <td><button class="btn btn-primary btn-sm">G4</button></td>
+                    <td><button class="btn btn-primary btn-sm">C5</button></td>
+                    <td><button class="btn btn-primary btn-sm">E5</button></td>
+                    <td><button class="btn btn-primary btn-sm">A5</button></td>
+                </tr>
+                <tr>
+                    <th>18</th>
+                    <td><button class="btn btn-secondary btn-sm">Bb3</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Ab4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">C#5</button></td>
+                    <td><button class="btn btn-primary btn-sm">F5</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb5</button></td>
+                </tr>
+                <tr>
+                    <th>19</th>
+                    <td><button class="btn btn-primary btn-sm">B3</button></td>
+                    <td><button class="btn btn-primary btn-sm">E4</button></td>
+                    <td><button class="btn btn-primary btn-sm">A4</button></td>
+                    <td><button class="btn btn-primary btn-sm">D5</button></td>
+                    <td><button class="btn btn-secondary btn-sm">F#5</button></td>
+                    <td><button class="btn btn-primary btn-sm">B5</button></td>
+                </tr>
+                <tr>
+                    <th>20</th>
+                    <td><button class="btn btn-primary btn-sm">C4</button></td>
+                    <td><button class="btn btn-primary btn-sm">F4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Bb4</button></td>
+                    <td><button class="btn btn-secondary btn-sm">Eb5</button></td>
+                    <td><button class="btn btn-primary btn-sm">G5</button></td>
+                    <td><button class="btn btn-primary btn-sm">C6</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="text-right">
+            <button id="top" class="btn btn-secondary">先頭に戻る</button>
+        </div>
+
+    </div>
+    <script src="./js/tuning.js"></script>
+    <script src="./js/pageTop.js"></script>
+</body>
+
+</html>

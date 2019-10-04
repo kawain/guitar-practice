@@ -1,0 +1,33 @@
+.container {
+    padding: 20px 0;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    vertical-align: middle;
+}
+
+#now {
+    font-size: 5em;
+}
+
+#now-triad {
+    font-size: 3em;
+}
+
+#now-chord {
+    font-size: 4em;
+}
+
+li {
+    list-style: none;
+}

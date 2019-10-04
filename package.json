@@ -1,0 +1,16 @@
+{
+  "name": "guitar-practice",
+  "version": "0.0.1",
+  "description": "My guitar practice software made by Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^6.0.11",
+    "electron-config": "^2.0.0",
+    "tone": "^13.8.25"
+  }
+}
