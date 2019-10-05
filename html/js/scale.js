@@ -51,63 +51,12 @@ function drawFret(sound_text) {
     let color2 = "blue";
     //ループして
     for (const v of sound_array) {
-        //1弦
-        for (let i = 0; i < fretboard[0].length; i++) {
-            if (v === fretboard[0][i]) {
-                if (root_count === 0) {
-                    arc.push([column[i], row[0], color1]);
-                } else {
-                    arc.push([column[i], row[0], color2]);
-                }
-            }
-        }
-        //2弦
-        for (let i = 0; i < fretboard[1].length; i++) {
-            if (v === fretboard[1][i]) {
-                if (root_count === 0) {
-                    arc.push([column[i], row[1], color1]);
-                } else {
-                    arc.push([column[i], row[1], color2]);
-                }
-            }
-        }
-        //3弦
-        for (let i = 0; i < fretboard[2].length; i++) {
-            if (v === fretboard[2][i]) {
-                if (root_count === 0) {
-                    arc.push([column[i], row[2], color1]);
-                } else {
-                    arc.push([column[i], row[2], color2]);
-                }
-            }
-        }
-        //4弦
-        for (let i = 0; i < fretboard[3].length; i++) {
-            if (v === fretboard[3][i]) {
-                if (root_count === 0) {
-                    arc.push([column[i], row[3], color1]);
-                } else {
-                    arc.push([column[i], row[3], color2]);
-                }
-            }
-        }
-        //5弦
-        for (let i = 0; i < fretboard[4].length; i++) {
-            if (v === fretboard[4][i]) {
-                if (root_count === 0) {
-                    arc.push([column[i], row[4], color1]);
-                } else {
-                    arc.push([column[i], row[4], color2]);
-                }
-            }
-        }
-        //6弦
-        for (let i = 0; i < fretboard[5].length; i++) {
-            if (v === fretboard[5][i]) {
-                if (root_count === 0) {
-                    arc.push([column[i], row[5], color1]);
-                } else {
-                    arc.push([column[i], row[5], color2]);
+        //1~6弦
+        for (let g = 0; g < 6; g++) {
+            for (let i = 0; i < fretboard[g].length; i++) {
+                if (v === fretboard[g][i]) {
+                    let tmp = (root_count === 0) ? [column[i], row[g], color1] : [column[i], row[g], color2];
+                    arc.push(tmp);
                 }
             }
         }
