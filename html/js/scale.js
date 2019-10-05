@@ -11,6 +11,22 @@ db.loadDatabase((error) => {
     console.log("load database completed.");
 });
 
+//指板配列
+const fretboard = [
+    ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"],
+    ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"],
+    ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb"],
+    ["Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb"],
+    ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F"],
+    ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]
+];
+
+//20列
+const column = [44, 81, 117, 153, 189, 225, 261, 297, 333, 369, 405, 441, 477, 513, 549, 585, 621, 657, 693, 729];
+
+//6行
+const row = [41, 68, 93, 119, 145, 171];
+
 //キャンバス
 const cvs = document.getElementById("canvas");
 const ctx = cvs.getContext("2d");
@@ -19,119 +35,93 @@ const img = new Image();
 img.src = "./img/fretboard.png";
 img.onload = () => {
     console.log("読み込み完了");
-    hoge();
-}
-
-function hoge() {
     ctx.drawImage(img, 0, 0);
-
-    ctx.fillStyle = "red";
-
-    //1
-    ctx.beginPath();
-    ctx.arc(44, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(81, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(117, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(153, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(189, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(225, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(261, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(297, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(333, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(369, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(405, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(441, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(477, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(513, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(549, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(585, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(621, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(657, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(693, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(729, 41, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    //2
-    ctx.beginPath();
-    ctx.arc(44, 68, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    //3
-    ctx.beginPath();
-    ctx.arc(44, 93, 10, 0, Math.PI * 2);
-    ctx.fill();
-
-    //4
-    ctx.beginPath();
-    ctx.arc(44, 119, 10, 0, Math.PI * 2);
-    ctx.fill();
-    //5
-    ctx.beginPath();
-    ctx.arc(44, 145, 10, 0, Math.PI * 2);
-    ctx.fill();
-    //6
-    ctx.beginPath();
-    ctx.arc(44, 171, 10, 0, Math.PI * 2);
-    ctx.fill();
 }
 
+function drawFret(sound_text) {
+    //配列にする
+    let sound_array = sound_text.split(',');
+    //arcを書き出すための配列
+    let arc = [];
+    //ルート
+    let root_count = 0;
+    //ルートの色
+    let color1 = "red";
+    //それ以外の色
+    let color2 = "blue";
+    //ループして
+    for (const v of sound_array) {
+        //1弦
+        for (let i = 0; i < fretboard[0].length; i++) {
+            if (v === fretboard[0][i]) {
+                if (root_count === 0) {
+                    arc.push([column[i], row[0], color1]);
+                } else {
+                    arc.push([column[i], row[0], color2]);
+                }
+            }
+        }
+        //2弦
+        for (let i = 0; i < fretboard[1].length; i++) {
+            if (v === fretboard[1][i]) {
+                if (root_count === 0) {
+                    arc.push([column[i], row[1], color1]);
+                } else {
+                    arc.push([column[i], row[1], color2]);
+                }
+            }
+        }
+        //3弦
+        for (let i = 0; i < fretboard[2].length; i++) {
+            if (v === fretboard[2][i]) {
+                if (root_count === 0) {
+                    arc.push([column[i], row[2], color1]);
+                } else {
+                    arc.push([column[i], row[2], color2]);
+                }
+            }
+        }
+        //4弦
+        for (let i = 0; i < fretboard[3].length; i++) {
+            if (v === fretboard[3][i]) {
+                if (root_count === 0) {
+                    arc.push([column[i], row[3], color1]);
+                } else {
+                    arc.push([column[i], row[3], color2]);
+                }
+            }
+        }
+        //5弦
+        for (let i = 0; i < fretboard[4].length; i++) {
+            if (v === fretboard[4][i]) {
+                if (root_count === 0) {
+                    arc.push([column[i], row[4], color1]);
+                } else {
+                    arc.push([column[i], row[4], color2]);
+                }
+            }
+        }
+        //6弦
+        for (let i = 0; i < fretboard[5].length; i++) {
+            if (v === fretboard[5][i]) {
+                if (root_count === 0) {
+                    arc.push([column[i], row[5], color1]);
+                } else {
+                    arc.push([column[i], row[5], color2]);
+                }
+            }
+        }
+        root_count++;
+    }
+    //描く
+    ctx.drawImage(img, 0, 0);
+    for (const v of arc) {
+        ctx.beginPath();
+        ctx.fillStyle = v[2];
+        ctx.arc(v[0], v[1], 10, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
 
 //form関係のdom
 const select_scale = document.getElementById("select_scale");
@@ -153,19 +143,26 @@ function redraw() {
             console.error(error);
         }
         //dom作成
-        let html = "<option></option>";
+        let html1 = "<option></option>";
+        let html2 = "<option></option>";
+
         for (const element of docs) {
-            html += `<option value="${element._id}">${element.scale_name}</option>`;
+            html1 += `<option value="${element.sound_text}">${element.scale_name} (${element.sound_text})</option>`;
         }
-        select_scale.innerHTML = html;
-        delete_scale.innerHTML = html;
+
+        for (const element of docs) {
+            html2 += `<option value="${element._id}">${element.scale_name}</option>`;
+        }
+
+        select_scale.innerHTML = html1;
+        delete_scale.innerHTML = html2;
 
     });
 }
 
 //スケール選択
 select_scale.addEventListener("change", (e) => {
-    console.log(e.target.value);
+    drawFret(e.target.value);
 });
 
 //スケール新規追加
@@ -193,7 +190,7 @@ new_save.addEventListener("click", (e) => {
     if (new_name.value !== "" && new_confirm.value !== "") {
         const doc = {
             scale_name: new_name.value,
-            sound_array: new_confirm_arr,
+            sound_text: new_confirm.value,
             created_at: new Date(),
         };
 

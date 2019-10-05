@@ -10,7 +10,7 @@
 
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="index.html">HOME</a>
             </li>
@@ -27,7 +27,15 @@
                 <a class="nav-link" href="chord.html">コード</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="scale.html">スケール</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="metronome.html">メトロノーム</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button class="btn btn-primary" id="close-btn">閉じる</button>
             </li>
         </ul>
     </nav>
@@ -107,6 +115,7 @@
             <button id="top" class="btn btn-secondary">先頭に戻る</button>
         </div>
     </div>
+    <script src="./js/close.js"></script>
     <script src="./js/chord.js"></script>
     <script src="./js/pageTop.js"></script>
 </body>
