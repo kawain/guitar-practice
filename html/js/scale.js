@@ -12,7 +12,7 @@ db.loadDatabase((error) => {
 });
 
 //指板配列
-const fretboard = [
+const fretboard2 = [
     ["F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"],
     ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"],
     ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb"],
@@ -28,14 +28,14 @@ const column = [44, 81, 117, 153, 189, 225, 261, 297, 333, 369, 405, 441, 477, 5
 const row = [41, 68, 93, 119, 145, 171];
 
 //キャンバス
-const cvs = document.getElementById("canvas");
-const ctx = cvs.getContext("2d");
+const scale_cvs = document.getElementById("scale_canvas");
+const scale_ctx = scale_cvs.getContext("2d");
 
 const img = new Image();
 img.src = "./img/fretboard.png";
 img.onload = () => {
     console.log("読み込み完了");
-    ctx.drawImage(img, 0, 0);
+    scale_ctx.drawImage(img, 0, 0);
 }
 
 function drawFret(sound_text) {
@@ -53,8 +53,8 @@ function drawFret(sound_text) {
     for (const v of sound_array) {
         //1~6弦
         for (let g = 0; g < 6; g++) {
-            for (let i = 0; i < fretboard[g].length; i++) {
-                if (v === fretboard[g][i]) {
+            for (let i = 0; i < fretboard2[g].length; i++) {
+                if (v === fretboard2[g][i]) {
                     let tmp = (root_count === 0) ? [column[i], row[g], color1] : [column[i], row[g], color2];
                     arc.push(tmp);
                 }
@@ -63,13 +63,22 @@ function drawFret(sound_text) {
         root_count++;
     }
     //描く
-    ctx.drawImage(img, 0, 0);
+    scale_ctx.drawImage(img, 0, 0);
     for (const v of arc) {
-        ctx.beginPath();
-        ctx.fillStyle = v[2];
-        ctx.arc(v[0], v[1], 10, 0, Math.PI * 2);
-        ctx.fill();
+        scale_ctx.beginPath();
+        scale_ctx.fillStyle = v[2];
+        scale_ctx.arc(v[0], v[1], 10, 0, Math.PI * 2);
+        scale_ctx.fill();
     }
+}
+
+//メトロノーム用
+function playSoundLoop(obj) {
+    const bpmValue = 60000 / parseInt(default_bpm);
+    intervalID = setInterval(() => {
+        //ハイハット
+        playSound(obj[1], 1);
+    }, bpmValue);
 }
 
 //form関係のdom

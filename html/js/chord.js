@@ -161,11 +161,11 @@ function playSoundLoop(obj) {
             ctx.fillStyle = "black";
             ctx.font = "42px sans-serif";
             ctx.textAlign = "center";
-            ctx.fillText(playNote.string1, canvas.width / 2, 140);
+            ctx.fillText(playNote.string1, w / 2, 140);
 
             ctx.font = "24px sans-serif";
             ctx.textAlign = "center";
-            ctx.fillText(`(次) ${playNote.string2}`, canvas.width / 2, 250);
+            ctx.fillText(`(次) ${playNote.string2}`, w / 2, 250);
 
         } else if (count === 0) {
             makeRandom();
@@ -179,11 +179,11 @@ function playSoundLoop(obj) {
             ctx.fillStyle = "black";
             ctx.font = "42px sans-serif";
             ctx.textAlign = "center";
-            ctx.fillText("Ready", canvas.width / 2, 140);
+            ctx.fillText("Ready", w / 2, 140);
 
             ctx.font = "24px sans-serif";
             ctx.textAlign = "center";
-            ctx.fillText(`(最初) ${playNote.string2}`, canvas.width / 2, 250);
+            ctx.fillText(`(最初) ${playNote.string2}`, w / 2, 250);
         }
         //ハイハット
         playSound(obj[1], 1);

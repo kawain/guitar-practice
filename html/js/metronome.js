@@ -1,28 +1,31 @@
-const Tone = require("Tone");
-const hiHat = new Tone.MetalSynth().toMaster();
+const carray = [
+    "pink",
+    "yellow",
+    "red",
+    "teal",
+    "orangered",
+    "darkgreen",
+    "lime",
+    "blue",
+    "maroon",
+    "ivory",
+    "fuchsia",
+    "aqua",
+    "purple",
+    "olive",
+    "white",
+    "gray",
+    "black"
+]
 
-//音量
-const Volume = require("./js/volumeClass.js");
-new Volume(undefined, hiHat);
-
-const start = document.getElementById("start");
-const stop = document.getElementById("stop");
-const bpm = document.getElementById("bpm");
-
-start.addEventListener("click", playSound);
-stop.addEventListener("click", stopSound);
-
-let intervalID;
-
-function playSound() {
-    start.disabled = "true";
-    const bpmValue = 60000 / parseInt(bpm.value);
+function playSoundLoop(obj) {
+    const bpmValue = 60000 / parseInt(default_bpm);
     intervalID = setInterval(() => {
-        hiHat.triggerAttackRelease('32n');
+        const color_index = Math.floor(carray.length * Math.random());
+        ctx.fillStyle = carray[color_index];
+        ctx.rect(0, 0, w, h);
+        ctx.fill();
+        //ハイハット
+        playSound(obj[1], 1);
     }, bpmValue);
-}
-
-function stopSound() {
-    start.disabled = "";
-    clearInterval(intervalID);
 }
