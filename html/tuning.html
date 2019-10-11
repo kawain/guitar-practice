@@ -16,12 +16,14 @@
     <script src="./js/header.js"></script>
 
     <div class="container">
-        <p>指板の音を覚えましょう。音階名横の数字はオクターブの高さを表します。</p>
+        <p class="my-4 text-center">音階名横の数字はオクターブの高さを表しています</p>
 
+        <!-- 音量 -->
         <div class="my-4 text-center">
-            <label for="volume">Volume(<span id="volumeValue"></span>)</label>
-            <div><input type="range" id="volume" min="-30" max="30"></div>
+            <label for="volume_value">Volume ( <span id="display_volume"></span> )</label>
+            <div><input type="range" id="volume_value" min="0" max="1" step="0.1"></div>
         </div>
+        <!-- /音量 -->
 
         <div class="table-responsive">
             <table class="table table-bordered">
