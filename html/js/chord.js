@@ -1,28 +1,11 @@
-const notes = require("./js/fingerboard.js");
-
-const Tone = require("Tone");
-const synth = new Tone.PolySynth().toMaster();
-const hiHat = new Tone.MetalSynth().toMaster();
-
-//音量
-const Volume = require("./js/volumeClass.js");
-new Volume(synth, hiHat);
-
 const playNote = {
+    //鳴らす音
     string1: "",
     sound1: [],
+    //次の音
     string2: "",
     sound2: []
 };
-
-const now = document.getElementById("now-chord");
-const next = document.getElementById("next");
-const start = document.getElementById("start");
-const stop = document.getElementById("stop");
-const bpm = document.getElementById("bpm");
-
-start.addEventListener("click", playSound);
-stop.addEventListener("click", stopSound);
 
 function makeRandom() {
     let chord;
@@ -42,106 +25,106 @@ function makeRandom() {
         case 0:
             //http://127.0.0.1:5500/html/img/chord/CM7-6.png
             //コード名
-            chord = notes[6][frets];
+            chord = fingerboard[6][frets];
             chord = chord.slice(0, -1);
             chord = `6弦ルート ${chord}M7`;
 
-            chords.push(notes[2][frets]);
-            chords.push(notes[3][frets + 1]);
-            chords.push(notes[4][frets + 1]);
+            chords.push(fingerboard[2][frets]);
+            chords.push(fingerboard[3][frets + 1]);
+            chords.push(fingerboard[4][frets + 1]);
             //ルート
-            chords.push(notes[6][frets]);
+            chords.push(fingerboard[6][frets]);
             break;
         case 1:
             //http://127.0.0.1:5500/html/img/chord/CM7-5.png
             //コード名
-            chord = notes[5][frets];
+            chord = fingerboard[5][frets];
             chord = chord.slice(0, -1);
             chord = `5弦ルート ${chord}M7`;
 
-            chords.push(notes[2][frets + 2]);
-            chords.push(notes[3][frets + 1]);
-            chords.push(notes[4][frets + 2]);
+            chords.push(fingerboard[2][frets + 2]);
+            chords.push(fingerboard[3][frets + 1]);
+            chords.push(fingerboard[4][frets + 2]);
             //ルート
-            chords.push(notes[5][frets]);
+            chords.push(fingerboard[5][frets]);
             break;
         case 2:
             //http://127.0.0.1:5500/html/img/chord/C-7-6.png
             //コード名
-            chord = notes[6][frets];
+            chord = fingerboard[6][frets];
             chord = chord.slice(0, -1);
             chord = `6弦ルート ${chord}m7`;
 
             //ルート
-            chords.push(notes[2][frets]);
-            chords.push(notes[3][frets]);
-            chords.push(notes[4][frets]);
-            chords.push(notes[6][frets]);
+            chords.push(fingerboard[2][frets]);
+            chords.push(fingerboard[3][frets]);
+            chords.push(fingerboard[4][frets]);
+            chords.push(fingerboard[6][frets]);
             break;
         case 3:
             //http://127.0.0.1:5500/html/img/chord/C-7-5.png
             //コード名
-            chord = notes[5][frets];
+            chord = fingerboard[5][frets];
             chord = chord.slice(0, -1);
             chord = `5弦ルート ${chord}m7`;
 
-            chords.push(notes[2][frets + 1]);
-            chords.push(notes[3][frets]);
-            chords.push(notes[4][frets + 2]);
+            chords.push(fingerboard[2][frets + 1]);
+            chords.push(fingerboard[3][frets]);
+            chords.push(fingerboard[4][frets + 2]);
             //ルート
-            chords.push(notes[5][frets]);
+            chords.push(fingerboard[5][frets]);
             break;
         case 4:
             //http://127.0.0.1:5500/html/img/chord/C7-6.png
             //コード名
-            chord = notes[6][frets];
+            chord = fingerboard[6][frets];
             chord = chord.slice(0, -1);
             chord = `6弦ルート ${chord}7`;
 
-            chords.push(notes[2][frets]);
-            chords.push(notes[3][frets + 1]);
-            chords.push(notes[4][frets]);
+            chords.push(fingerboard[2][frets]);
+            chords.push(fingerboard[3][frets + 1]);
+            chords.push(fingerboard[4][frets]);
             //ルート
-            chords.push(notes[6][frets]);
+            chords.push(fingerboard[6][frets]);
             break;
         case 5:
             //http://127.0.0.1:5500/html/img/chord/C7-5.png
             //コード名
-            chord = notes[5][frets];
+            chord = fingerboard[5][frets];
             chord = chord.slice(0, -1);
             chord = `5弦ルート ${chord}7`;
 
-            chords.push(notes[2][frets + 2]);
-            chords.push(notes[3][frets]);
-            chords.push(notes[4][frets + 2]);
+            chords.push(fingerboard[2][frets + 2]);
+            chords.push(fingerboard[3][frets]);
+            chords.push(fingerboard[4][frets + 2]);
             //ルート
-            chords.push(notes[5][frets]);
+            chords.push(fingerboard[5][frets]);
             break;
         case 6:
             //http://127.0.0.1:5500/html/img/chord/Cm7b5-6.png
             //コード名
-            chord = notes[6][frets];
+            chord = fingerboard[6][frets];
             chord = chord.slice(0, -1);
             chord = `6弦ルート ${chord}m7b5`;
 
-            chords.push(notes[2][frets - 1]);
-            chords.push(notes[3][frets]);
-            chords.push(notes[4][frets]);
+            chords.push(fingerboard[2][frets - 1]);
+            chords.push(fingerboard[3][frets]);
+            chords.push(fingerboard[4][frets]);
             //ルート
-            chords.push(notes[6][frets]);
+            chords.push(fingerboard[6][frets]);
             break;
         case 7:
             //http://127.0.0.1:5500/html/img/chord/Cm7b5-5.png
             //コード名
-            chord = notes[5][frets];
+            chord = fingerboard[5][frets];
             chord = chord.slice(0, -1);
             chord = `5弦ルート ${chord}m7b5`;
 
-            chords.push(notes[2][frets + 1]);
-            chords.push(notes[3][frets]);
-            chords.push(notes[4][frets + 1]);
+            chords.push(fingerboard[2][frets + 1]);
+            chords.push(fingerboard[3][frets]);
+            chords.push(fingerboard[4][frets + 1]);
             //ルート
-            chords.push(notes[5][frets]);
+            chords.push(fingerboard[5][frets]);
             break;
         default:
             console.log("error");
@@ -158,33 +141,52 @@ function makeRandom() {
     }
 }
 
-let intervalID;
-let count = 0;
-
-function playSound() {
-    start.disabled = "true";
-    const bpmValue = 60000 / parseInt(bpm.value);
+function playSoundLoop(obj) {
+    const bpmValue = 60000 / parseInt(default_bpm);
     intervalID = setInterval(() => {
         //4拍子固定
         if (count > 0 && count % 4 == 0) {
             makeRandom();
-            //和音
-            synth.triggerAttackRelease(playNote.sound1, "4n");
+            //ギター和音
+            playSound(obj[0], ansFrequency(playNote.sound1[0]));
+            playSound(obj[0], ansFrequency(playNote.sound1[1]));
+            playSound(obj[0], ansFrequency(playNote.sound1[2]));
+            playSound(obj[0], ansFrequency(playNote.sound1[3]));
             //表示
-            now.innerHTML = playNote.string1;
-            next.innerHTML = `(次) ${playNote.string2}`;
+            //ctx.clearRect(0, 0, w, h);
+            ctx.fillStyle = "chartreuse";
+            ctx.rect(0, 0, w, h);
+            ctx.fill();
+
+            ctx.fillStyle = "black";
+            ctx.font = "42px sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText(playNote.string1, canvas.width / 2, 140);
+
+            ctx.font = "24px sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText(`(次) ${playNote.string2}`, canvas.width / 2, 250);
+
         } else if (count === 0) {
             makeRandom();
-            now.innerHTML = "Ready";
-            next.innerHTML = `(最初) ${playNote.string2}`;
+
+            //表示
+            //ctx.clearRect(0, 0, w, h);
+            ctx.fillStyle = "red";
+            ctx.rect(0, 0, w, h);
+            ctx.fill();
+
+            ctx.fillStyle = "black";
+            ctx.font = "42px sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText("Ready", canvas.width / 2, 140);
+
+            ctx.font = "24px sans-serif";
+            ctx.textAlign = "center";
+            ctx.fillText(`(最初) ${playNote.string2}`, canvas.width / 2, 250);
         }
-        hiHat.triggerAttackRelease('32n');
+        //ハイハット
+        playSound(obj[1], 1);
         count++;
-
     }, bpmValue);
-}
-
-function stopSound() {
-    start.disabled = "";
-    clearInterval(intervalID);
 }

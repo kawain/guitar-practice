@@ -16,81 +16,63 @@
     <script src="./js/header.js"></script>
 
     <div class="container">
-        <p>
-            ランダムに再生されるコードを押さえましょう。コードの押さえ方は一番下の図を見てください。
-            余裕があればコードトーンも弾いてみましょう。
+
+        <p class="my-4 text-center">
+            ランダムに再生されるコードを押さえる練習<br>
+            余裕があればコードトーンも弾きましょう
         </p>
 
-        <div class="my-4 text-center">
-            <label for="volume">Volume(<span id="volumeValue"></span>)</label>
-            <div><input type="range" id="volume" min="-30" max="30"></div>
+        <div class="my-2 text-center">
+            <canvas id="canvas" width="400" height="300"></canvas>
         </div>
 
+        <!-- 音量 -->
+        <div class="my-2 text-center">
+            <label for="volume_value">Volume ( <span id="display_volume"></span> )</label>
+            <div><input type="range" id="volume_value" min="0" max="1" step="0.1"></div>
+        </div>
+        <!-- /音量 -->
+
+        <!-- テンポ -->
+        <div class="my-2 text-center">
+            <label for="bpm_value">BPM ( <span id="display_bpm"></span> )</label>
+            <div><input type="range" id="bpm_value" min="10" max="300" step="1"></div>
+        </div>
+        <!-- /テンポ -->
+
         <div class="my-4 text-center">
-            <h1 id="now-chord" class="text-primary my-5"></h1>
-            <h2 id="next" class="my-5"></h2>
-            <div class="form-inline justify-content-center">
-                <button class="btn btn-primary mr-2" id="start">再生</button>
-                <button class="btn btn-primary mr-2" id="stop">停止</button>
-                <input style="width: 100px;" class="form-control mr-2" type="number" id="bpm" value="70">
-                <span>テンポ (BPM)</span>
-            </div>
+            <button class="btn btn-primary mr-2" id="play_pause"> Play / Pause </button>
         </div>
 
-        <h2 style="margin-top: 100px;">押さえ方</h2>
-        <p>Cの例です。他のコードの場合ポジションを変えてください。</p>
-        <ul>
-            <li class="h3 mt-4">メジャーセブンス</li>
-            <ul>
-                <li>6弦がルートの場合</li>
-                <ul class="list-group">
-                    <li class="list-group-item text-center"> <img src="./img/chord/CM7-6.png" class="img-fluid"> </li>
-                </ul>
-                <li>5弦がルートの場合</li>
-                <ul class="list-group">
-                    <li class="list-group-item text-center"> <img src="./img/chord/CM7-5.png" class="img-fluid"> </li>
-                </ul>
-            </ul>
-            <li class="h3 mt-4">マイナーセブンス</li>
-            <ul>
-                <li>6弦がルートの場合</li>
-                <ul class="list-group">
-                    <li class="list-group-item text-center"> <img src="./img/chord/C-7-6.png" class="img-fluid"> </li>
-                </ul>
-                <li>5弦がルートの場合</li>
-                <ul class="list-group">
-                    <li class="list-group-item text-center"> <img src="./img/chord/C-7-5.png" class="img-fluid"> </li>
-                </ul>
-            </ul>
-            <li class="h3 mt-4">ドミナントセブンス</li>
-            <ul>
-                <li>6弦がルートの場合</li>
-                <ul class="list-group">
-                    <li class="list-group-item text-center"> <img src="./img/chord/C7-6.png" class="img-fluid"> </li>
-                </ul>
-                <li>5弦がルートの場合</li>
-                <ul class="list-group">
-                    <li class="list-group-item text-center"> <img src="./img/chord/C7-5.png" class="img-fluid"> </li>
-                </ul>
-            </ul>
-            <li class="h3 mt-4">マイナーセブンスフラットファイブ</li>
-            <ul>
-                <li>6弦がルートの場合</li>
-                <ul class="list-group">
-                    <li class="list-group-item text-center"> <img src="./img/chord/Cm7b5-6.png" class="img-fluid"> </li>
-                </ul>
-                <li>5弦がルートの場合</li>
-                <ul class="list-group">
-                    <li class="list-group-item text-center"> <img src="./img/chord/Cm7b5-5.png" class="img-fluid"> </li>
-                </ul>
-            </ul>
-        </ul>
+        <h2 class="text-center" style="margin-top: 100px;">押さえ方</h2>
+        <p class="my-4 text-center">Cの例です。他のコードの場合ポジションを変えてください。</p>
+        <h3 class="my-4 text-center">メジャーセブンス</h3>
+        <h4 class="my-4 text-center">6弦がルートの場合</h4>
+        <div class="text-center"> <img src="./img/chord/CM7-6.png" class="img-fluid"> </div>
+        <h4 class="my-4 text-center">5弦がルートの場合</h4>
+        <div class="text-center"> <img src="./img/chord/CM7-5.png" class="img-fluid"> </div>
+        <h3 class="my-4 text-center">マイナーセブンス</h3>
+        <h4 class="my-4 text-center">6弦がルートの場合</h4>
+        <div class="text-center"> <img src="./img/chord/C-7-6.png" class="img-fluid"> </div>
+        <h4 class="my-4 text-center">5弦がルートの場合</h4>
+        <div class="text-center"> <img src="./img/chord/C-7-5.png" class="img-fluid"> </div>
+        <h3 class="my-4 text-center">ドミナントセブンス</h3>
+        <h4 class="my-4 text-center">6弦がルートの場合</h4>
+        <div class="text-center"> <img src="./img/chord/C7-6.png" class="img-fluid"> </div>
+        <h4 class="my-4 text-center">5弦がルートの場合</h4>
+        <div class="text-center"> <img src="./img/chord/C7-5.png" class="img-fluid"> </div>
+        <h3 class="my-4 text-center">マイナーセブンスフラットファイブ</h3>
+        <h4 class="my-4 text-center">6弦がルートの場合</h4>
+        <div class="text-center"> <img src="./img/chord/Cm7b5-6.png" class="img-fluid"> </div>
+        <h4 class="my-4 text-center">5弦がルートの場合</h4>
+        <div class="text-center"> <img src="./img/chord/Cm7b5-5.png" class="img-fluid"> </div>
 
-        <div class="text-right">
+        <div class="my-4 text-right">
             <button id="top" class="btn btn-secondary">先頭に戻る</button>
         </div>
     </div>
     <script src="./js/close.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/chord.js"></script>
     <script src="./js/pageTop.js"></script>
 </body>
