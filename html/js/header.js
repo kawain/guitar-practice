@@ -22,6 +22,9 @@ document.write(`
 <li class="nav-item${active[6]}">
 <a class="nav-link" href="metronome.html">メトロノーム</a>
 </li>
+<li class="nav-item${active[7]}">
+<a class="nav-link" href="keyboard.html">キーボード</a>
+</li>
 </ul>
 <ul class="navbar-nav">
 <li class="nav-item">

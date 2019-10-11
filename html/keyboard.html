@@ -3,24 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>メトロノーム</title>
+    <title>キーボード</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <script>
-        const active = ["", "", "", "", "", "", " active", ""]
+        const active = ["", "", "", "", "", "", "", " active"]
 
     </script>
     <script src="./js/header.js"></script>
 
     <div class="container">
 
-        <p class="my-2 text-center">メトロノーム</p>
+        <p class="my-2 text-center">キーボードを押して何か弾いてみよう</p>
 
         <div class="my-2 text-center">
-            <canvas id="canvas" width="400" height="300"></canvas>
+            <canvas id="keyboard_canvas" width="400" height="300"></canvas>
         </div>
 
         <!-- 音量 -->
@@ -30,22 +30,10 @@
         </div>
         <!-- /音量 -->
 
-        <!-- テンポ -->
-        <div class="my-2 text-center">
-            <label for="bpm_value">BPM ( <span id="display_bpm"></span> )</label>
-            <div><input type="range" id="bpm_value" min="10" max="300" step="1"></div>
-        </div>
-        <!-- /テンポ -->
-
-        <div class="my-2 text-center">
-            <button class="btn btn-primary mr-2" id="play_pause"> Play / Pause </button>
-        </div>
-
     </div>
     <script src="./js/close.js"></script>
     <script src="./js/variable.js"></script>
-    <script src="./js/common.js"></script>
-    <script src="./js/metronome.js"></script>
+    <script src="./js/keyboard.js"></script>
 </body>
 
 </html>
