@@ -1,15 +1,4 @@
-//https://github.com/louischatriot/nedb
-const Database = require("nedb");
-const db = new Database({
-    filename: "./html/db/scale.db"
-});
-
-db.loadDatabase((error) => {
-    if (error !== null) {
-        console.error(error);
-    }
-    console.log("load database completed.");
-});
+const scales_json = require('./scales.json');
 
 //指板配列
 const fretboard2 = [
@@ -27,6 +16,9 @@ const column = [44, 81, 117, 153, 189, 225, 261, 297, 333, 369, 405, 441, 477, 5
 //6行
 const row = [41, 68, 93, 119, 145, 171];
 
+//移調用
+const key_array = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
+
 //キャンバス
 const scale_cvs = document.getElementById("scale_canvas");
 const scale_ctx = scale_cvs.getContext("2d");
@@ -38,9 +30,7 @@ img.onload = () => {
     scale_ctx.drawImage(img, 0, 0);
 }
 
-function drawFret(sound_text) {
-    //配列にする
-    let sound_array = sound_text.split(',');
+function drawFret(sound_array) {
     //arcを書き出すための配列
     let arc = [];
     //ルート
@@ -82,115 +72,56 @@ function playSoundLoop(obj) {
 }
 
 //form関係のdom
+const root_sound = document.getElementById("root_sound");
 const select_scale = document.getElementById("select_scale");
-const new_name = document.getElementById("new_name");
-const new_sound = document.getElementById("new_sound");
-const new_add = document.getElementById("new_add");
-const new_confirm = document.getElementById("new_confirm");
-const new_delete = document.getElementById("new_delete");
-const new_save = document.getElementById("new_save");
-const delete_scale = document.getElementById("delete_scale");
-const delete_btn = document.getElementById("delete_btn");
+const show_btn = document.getElementById("show_btn");
 
-//スケール一覧
-function redraw() {
-    db.find({}).sort({
-        created_at: -1
-    }).exec((error, docs) => {
-        if (error !== null) {
-            console.error(error);
-        }
-        //dom作成
-        let html1 = "<option></option>";
-        let html2 = "<option></option>";
-
-        for (const element of docs) {
-            html1 += `<option value="${element.sound_text}">${element.scale_name} (${element.sound_text})</option>`;
-        }
-
-        for (const element of docs) {
-            html2 += `<option value="${element._id}">${element.scale_name}</option>`;
-        }
-
-        select_scale.innerHTML = html1;
-        delete_scale.innerHTML = html2;
-
-    });
+//select_scale作成
+function make_select_scale() {
+    //dom作成
+    let html = "<option></option>";
+    for (const v of scales_json) {
+        html += `<option value="${v.keys}">${v.name}</option>`;
+    }
+    select_scale.innerHTML = html;
 }
 
-//スケール選択
-select_scale.addEventListener("change", (e) => {
-    drawFret(e.target.value);
-});
+//移調関数
+function transposition(n) {
+    let n2 = n - 1;
+    let i = 0;
+    const a1 = [];
+    const a2 = [];
 
-//スケール新規追加
-let new_confirm_arr = [];
-
-//音追加
-new_add.addEventListener("click", (e) => {
-    if (new_sound.value !== "") {
-        new_confirm_arr.push(new_sound.value);
-        new_confirm.value = new_confirm_arr.join(',');
+    for (const v of key_array) {
+        if (i >= n2) {
+            a1.push(v);
+        } else {
+            a2.push(v);
+        }
+        i++;
     }
+
+    return a1.concat(a2);
+}
+
+show_btn.addEventListener("click", (e) => {
     e.preventDefault();
-});
+    if (root_sound.value !== "" && select_scale.value !== "") {
+        const ary = transposition(root_sound.value);
+        const tmp = [];
+        //配列にする
+        const keys = select_scale.value.split(',');
 
-//音削除
-new_delete.addEventListener("click", (e) => {
-    new_confirm_arr.pop();
-    new_confirm.value = new_confirm_arr.join(',');
-    e.preventDefault();
-});
-
-//保存
-new_save.addEventListener("click", (e) => {
-
-    if (new_name.value !== "" && new_confirm.value !== "") {
-        const doc = {
-            scale_name: new_name.value,
-            sound_text: new_confirm.value,
-            created_at: new Date(),
-        };
-
-        db.insert(doc, (error, newDoc) => {
-            if (error !== null) {
-                console.error(error);
+        for (let i = 0; i < ary.length; i++) {
+            for (const v of keys) {
+                if (parseInt(v) === i + 1) {
+                    tmp.push(ary[i]);
+                }
             }
-            console.log(newDoc);
-        });
-
-        new_confirm_arr = [];
-        new_name.value = "";
-        new_confirm.value = "";
-        new_sound.selectedIndex = 0;
-
-        redraw();
-
-    } else {
-        alert("スケール名と音の両方とも入力してください");
+        }
+        drawFret(tmp);
     }
-
-    e.preventDefault();
 });
 
-//スケール削除
-delete_btn.addEventListener("click", (e) => {
-    if (delete_scale.value !== "") {
-        const query = {
-            _id: delete_scale.value
-        };
-        const options = {
-            multi: false
-        };
-        db.remove(query, options, (error, numOfDocs) => {
-            if (error !== null) {
-                console.error(error);
-            }
-            redraw();
-        });
-    }
-    e.preventDefault();
-});
-
-
-redraw();
+make_select_scale();

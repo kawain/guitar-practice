@@ -1,0 +1,271 @@
+[{
+    "name": "Major Scale",
+    "keys": "1,3,5,6,8,10,12"
+}, {
+    "name": "Pentatonic Major Scale",
+    "keys": "1,3,5,8,10"
+}, {
+    "name": "Blues Major Scale",
+    "keys": "1,4,6,7,8,10"
+}, {
+    "name": "Minor Scale",
+    "keys": "1,3,4,6,8,9,11"
+}, {
+    "name": "Melodic Minor Scale",
+    "keys": "1,3,4,6,8,10,12"
+}, {
+    "name": "Harmonic Minor Scale",
+    "keys": "1,3,4,6,8,9,12"
+}, {
+    "name": "Pentatonic Minor Scale",
+    "keys": "1,4,6,8,11"
+}, {
+    "name": "Blues Minor Scale",
+    "keys": "1,4,6,7,8,11"
+}, {
+    "name": "Augmented Scale",
+    "keys": "1,4,5,8,9,12"
+}, {
+    "name": "Be-Bop Scale",
+    "keys": "1,3,5,6,8,10,11,12"
+}, {
+    "name": "Chromatic Scale",
+    "keys": "1,2,3,4,5,6,7,8,9,10,11,12"
+}, {
+    "name": "Whole-Half Scale",
+    "keys": "1,3,4,6,7,9,10,12"
+}, {
+    "name": "Half-Whole Scale",
+    "keys": "1,2,4,5,7,8,10,11"
+}, {
+    "name": "Whole Tone Scale",
+    "keys": "1,3,5,7,9,11"
+}, {
+    "name": "Augmented fifth Scale",
+    "keys": "1,3,5,6,8,9,10,12"
+}, {
+    "name": "Algerian Scale",
+    "keys": "1,3,4,7,8,9,12"
+}, {
+    "name": "Arabian Scale",
+    "keys": "1,3,5,6,7,9,11"
+}, {
+    "name": "Balinese Scale",
+    "keys": "1,2,4,8,9"
+}, {
+    "name": "Bartok Scale",
+    "keys": "1,3,5,7,8,10,11"
+}, {
+    "name": "Byzantine Scale",
+    "keys": "1,2,5,6,8,9,12"
+}, {
+    "name": "Chinese Scale",
+    "keys": "1,3,5,8,10"
+}, {
+    "name": "Egyptian Scale",
+    "keys": "1,3,6,8,11"
+}, {
+    "name": "Enigmatic Scale",
+    "keys": "1,2,5,7,9,11,12"
+}, {
+    "name": "Spanish Scale",
+    "keys": "1,2,5,6,8,9,11"
+}, {
+    "name": "Spanish 8 Tone Scale",
+    "keys": "1,2,4,5,6,7,9,11"
+}, {
+    "name": "Ethiopian Scale",
+    "keys": "1,3,4,6,8,9,11"
+}, {
+    "name": "Gypsy Scale",
+    "keys": "1,2,5,6,8,10,11"
+}, {
+    "name": "Hungarian Gypsy Scale",
+    "keys": "1,3,4,7,8,9,11"
+}, {
+    "name": "Hindu Scale",
+    "keys": "1,3,5,6,8,9,11"
+}, {
+    "name": "Iwato Scale",
+    "keys": "1,2,6,7,11"
+}, {
+    "name": "Japanese Scale",
+    "keys": "1,2,6,8,9"
+}, {
+    "name": "Javanese Scale",
+    "keys": "1,2,4,6,8,10,11"
+}, {
+    "name": "Jewish Scale",
+    "keys": "1,2,5,6,8,9,11"
+}, {
+    "name": "Hawaiian Scale",
+    "keys": "1,3,4,6,8,10,12"
+}, {
+    "name": "Hirajoshi Scale",
+    "keys": "1,3,4,8,9"
+}, {
+    "name": "Hungarian Minor Scale",
+    "keys": "1,3,4,7,8,9,12"
+}, {
+    "name": "Hungarian Major Scale",
+    "keys": "1,4,5,7,8,10,11"
+}, {
+    "name": "Kumoi Scale",
+    "keys": "1,2,6,8,9"
+}, {
+    "name": "Leading Whole Tone Scale",
+    "keys": "1,3,5,7,9,11,12"
+}, {
+    "name": "Mohammedan Scale",
+    "keys": "1,3,4,6,8,9,12"
+}, {
+    "name": "Mongolian Scale",
+    "keys": "1,3,5,8,10"
+}, {
+    "name": "Neapolitan Minor Scale",
+    "keys": "1,2,4,6,8,9,12"
+}, {
+    "name": "Neapolitan Major Scale",
+    "keys": "1,2,4,6,8,10,12"
+}, {
+    "name": "Oriental Scale",
+    "keys": "1,2,5,6,7,10,11"
+}, {
+    "name": "Overtone Scale",
+    "keys": "1,3,5,7,8,10,11"
+}, {
+    "name": "Pelog Scale",
+    "keys": "1,2,4,8,11"
+}, {
+    "name": "Persian Scale",
+    "keys": "1,2,5,6,7,9,12"
+}, {
+    "name": "Ionian Mode",
+    "keys": "1,3,5,6,8,10,12"
+}, {
+    "name": "Dorian Mode",
+    "keys": "1,3,4,6,8,10,11"
+}, {
+    "name": "Phrygian Mode",
+    "keys": "1,2,4,6,8,9,11"
+}, {
+    "name": "Lydian Mode",
+    "keys": "1,3,5,7,8,10,12"
+}, {
+    "name": "Mixolydian Mode",
+    "keys": "1,3,5,6,8,10,11"
+}, {
+    "name": "Aeolian Mode",
+    "keys": "1,3,4,6,8,9,11"
+}, {
+    "name": "Locrian Mode",
+    "keys": "1,2,4,6,7,9,11"
+}, {
+    "name": "Aeolian Harmonic Mode",
+    "keys": "1,3,4,6,8,9,12"
+}, {
+    "name": "Locrian Sharp 6 Mode",
+    "keys": "1,2,4,6,7,10,11"
+}, {
+    "name": "Major Sharp 5 Mode",
+    "keys": "1,3,5,6,9,10,12"
+}, {
+    "name": "Dorian Sharp 4 Mode",
+    "keys": "1,3,4,7,8,10,11"
+}, {
+    "name": "Phrygian Major Mode",
+    "keys": "1,2,5,6,8,9,11"
+}, {
+    "name": "Lydian Sharp 2 mode",
+    "keys": "1,4,5,7,8,10,12"
+}, {
+    "name": "Superlocrian Double Flat 7 Mode",
+    "keys": "1,2,4,5,7,9,10"
+}, {
+    "name": "Jazz Minor Mode",
+    "keys": "1,3,4,6,8,10,12"
+}, {
+    "name": "Dorian b2 Minor Mode",
+    "keys": "1,2,4,6,8,10,12"
+}, {
+    "name": "Lydian Augmented Minor Mode",
+    "keys": "1,3,5,7,9,10,12"
+}, {
+    "name": "Lydian Flat 7 Minor Mode",
+    "keys": "1,3,5,7,8,10,11"
+}, {
+    "name": "Mixolydian Flat 6 Minor Mode",
+    "keys": "1,3,5,6,8,9,11"
+}, {
+    "name": "Locrian Sharp 2 Minor Mode",
+    "keys": "1,3,4,6,7,9,11"
+}, {
+    "name": "Superlocrian Minor Mode",
+    "keys": "1,2,4,5,7,9,11"
+}, {
+    "name": "Pentatonic Majeur Mode",
+    "keys": "1,3,5,8,10"
+}, {
+    "name": "Pentatonic Mode 2",
+    "keys": "1,3,6,8,11"
+}, {
+    "name": "Pentatonic Mode 3",
+    "keys": "1,4,6,9,11"
+}, {
+    "name": "Pentatonic Mode 4",
+    "keys": "1,3,6,8,10"
+}, {
+    "name": "Pentatonic Dominant Mode",
+    "keys": "1,3,5,8,11"
+}, {
+    "name": "Pentatonic Minor Mode",
+    "keys": "1,4,6,8,11"
+}, {
+    "name": "Altered Pentatonic Mode",
+    "keys": "1,2,5,8,10"
+}, {
+    "name": "Blues Mode",
+    "keys": "1,4,6,7,8,10"
+}, {
+    "name": "Major Arpeggio",
+    "keys": "1,5,8"
+}, {
+    "name": "Minor Arpeggio",
+    "keys": "1,4,8"
+}, {
+    "name": "Major 7th Major Arpeggio",
+    "keys": "1,5,8,12"
+}, {
+    "name": "Major 7th Minor Arpeggio",
+    "keys": "1,5,8,11"
+}, {
+    "name": "Minor 7th Major Arpeggio",
+    "keys": "1,4,8,12"
+}, {
+    "name": "Minor 7th Minor Arpeggio",
+    "keys": "1,4,8,11"
+}, {
+    "name": "Major 9th Arpeggio",
+    "keys": "1,3,5,8,11"
+}, {
+    "name": "Minor 9th Arpeggio",
+    "keys": "1,3,4,8,11"
+}, {
+    "name": "Major 11th Arpeggio",
+    "keys": "1,3,5,6,8,11"
+}, {
+    "name": "Minor 11th Arpeggio",
+    "keys": "1,3,4,6,8,11"
+}, {
+    "name": "Major 13th Arpeggio",
+    "keys": "1,3,5,6,8,10,11"
+}, {
+    "name": "Minor 13th Arpeggio",
+    "keys": "1,3,4,6,8,10,11"
+}, {
+    "name": "Augmented Arpeggio",
+    "keys": "1,5,9"
+}, {
+    "name": "Diminished Arpeggio",
+    "keys": "1,4,7,10"
+}]

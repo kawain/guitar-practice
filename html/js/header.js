@@ -5,25 +5,16 @@ document.write(`
 <a class="nav-link" href="index.html">HOME</a>
 </li>
 <li class="nav-item${active[1]}">
-<a class="nav-link" href="tuning.html">チューニング</a>
-</li>
-<li class="nav-item${active[2]}">
 <a class="nav-link" href="basic.html">指板の音</a>
 </li>
-<li class="nav-item${active[3]}">
+<li class="nav-item${active[2]}">
 <a class="nav-link" href="triad.html">トライアド</a>
 </li>
-<li class="nav-item${active[4]}">
+<li class="nav-item${active[3]}">
 <a class="nav-link" href="chord.html">コード</a>
 </li>
-<li class="nav-item${active[5]}">
+<li class="nav-item${active[4]}">
 <a class="nav-link" href="scale.html">スケール</a>
-</li>
-<li class="nav-item${active[6]}">
-<a class="nav-link" href="metronome.html">メトロノーム</a>
-</li>
-<li class="nav-item${active[7]}">
-<a class="nav-link" href="keyboard.html">キーボード</a>
 </li>
 </ul>
 <ul class="navbar-nav">

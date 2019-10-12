@@ -8,6 +8,8 @@ const fingerboard = {
 }
 
 const frequency = {
+    "D2": 73.416,
+    "Eb2": 77.782,
     "E2": 82.407,
     "F2": 87.307,
     "Gb2": 92.499,

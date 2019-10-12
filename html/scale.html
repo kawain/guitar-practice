@@ -10,7 +10,7 @@
 
 <body>
     <script>
-        const active = ["", "", "", "", "", " active", "", ""]
+        const active = ["", "", "", "", " active"]
 
     </script>
     <script src="./js/header.js"></script>
@@ -40,57 +40,32 @@
         </div>
 
         <h4>スケール選択</h4>
-        <div class="form-group">
-            <select class="form-control" id="select_scale">
-            </select>
-        </div>
-
-        <h5>スケール新規追加</h5>
-        <p>最初の音をルート音にしてください</p>
-        <form class="form-inline">
-            <div class="form-group mr-2">
-                <input type="text" class="form-control" id="new_name" placeholder="スケール名">
-            </div>
-
-            <div class="form-group mr-2">
-                <select class="form-control" id="new_sound">
+        <div class="row">
+            <div class="col-2">
+                <select class="form-control" id="root_sound">
                     <option></option>
-                    <option>C</option>
-                    <option>Db</option>
-                    <option>D</option>
-                    <option>Eb</option>
-                    <option>E</option>
-                    <option>F</option>
-                    <option>Gb</option>
-                    <option>G</option>
-                    <option>Ab</option>
-                    <option>A</option>
-                    <option>Bb</option>
-                    <option>B</option>
+                    <option value="1">C</option>
+                    <option value="2">Db</option>
+                    <option value="3">D</option>
+                    <option value="4">Eb</option>
+                    <option value="5">E</option>
+                    <option value="6">F</option>
+                    <option value="7">Gb</option>
+                    <option value="8">G</option>
+                    <option value="9">Ab</option>
+                    <option value="10">A</option>
+                    <option value="11">Bb</option>
+                    <option value="12">B</option>
                 </select>
             </div>
-
-            <button class="btn btn-primary mr-2" id="new_add">音追加</button>
-
-            <div class="form-group mr-2">
-                <input type="text" class="form-control" id="new_confirm" readonly>
-            </div>
-
-            <button class="btn btn-primary mr-2" id="new_delete">音削除</button>
-
-            <button class="btn btn-danger" id="new_save">保存</button>
-
-        </form>
-
-        <h6 class="mt-3">スケール削除</h6>
-        <p>選択してから削除ボタンを押します</p>
-        <form class="form-inline">
-            <div class="form-group mr-2">
-                <select class="form-control" id="delete_scale">
+            <div class="col-8">
+                <select class="form-control" id="select_scale">
                 </select>
             </div>
-            <button class="btn btn-primary" id="delete_btn">削除</button>
-        </form>
+            <div class="col-2">
+                <button class="btn btn-primary mr-2" id="show_btn">表示</button>
+            </div>
+        </div>
     </div>
     <script src="./js/close.js"></script>
     <script src="./js/variable.js"></script>
