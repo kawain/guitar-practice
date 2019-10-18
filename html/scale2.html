@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自作スケール</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <script>
+        const active = ["", "", "", "", ""]
+
+    </script>
+    <script src="./js/header.js"></script>
+
+    <p class="my-2 text-center">自作のスケールを作成して保存できます</p>
+    
+    <div class="fretboard">
+        <canvas id="scale_canvas" width="771" height="206"></canvas>
+    </div>
+
+    <div class="container">
+        
+        <h4>保存済みスケール選択</h4>
+        <div class="form-group">
+            <select class="form-control" id="select_scale">
+            </select>
+        </div>
+
+        <h5>自作のスケール新規追加</h5>
+        <p>最初の音をルート音にしてください</p>
+        <form class="form-inline">
+            <div class="form-group mr-2">
+                <input type="text" class="form-control" id="new_name" placeholder="スケール名">
+            </div>
+
+            <div class="form-group mr-2">
+                <select class="form-control" id="new_sound">
+                    <option></option>
+                    <option>C</option>
+                    <option>Db</option>
+                    <option>D</option>
+                    <option>Eb</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>Gb</option>
+                    <option>G</option>
+                    <option>Ab</option>
+                    <option>A</option>
+                    <option>Bb</option>
+                    <option>B</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary mr-2" id="new_add">音追加</button>
+
+            <div class="form-group mr-2">
+                <input type="text" class="form-control" id="new_confirm" readonly>
+            </div>
+
+            <button class="btn btn-primary mr-2" id="new_delete">音削除</button>
+
+            <button class="btn btn-danger" id="new_save">保存</button>
+
+        </form>
+
+        <h6 class="mt-3">保存済みスケール削除</h6>
+        <p>選択してから削除ボタンを押します</p>
+        <form class="form-inline">
+            <div class="form-group mr-2">
+                <select class="form-control" id="delete_scale">
+                </select>
+            </div>
+            <button class="btn btn-primary" id="delete_btn">削除</button>
+        </form>
+    </div>
+    <script src="./js/close.js"></script>
+    <script src="./js/scale2.js"></script>
+</body>
+
+</html>
