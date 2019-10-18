@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>指板の音を覚えるクイズ</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <script>
+        const active = ["", "", "", "", ""]
+
+    </script>
+    <script src="./js/header.js"></script>
+    <div class="container">
+        <p class="my-2 text-center">
+            指板の音を下のボタン(C～Bまで)を押して答えてください。<br>
+            ６弦から、EADGBE のレギュラーチューニングです。
+        </p>
+        <h2 class="my-4 text-center text-warning" id="question"></h2>
+        <div class="my-4 text-center" id="answer"></div>
+        <div class="my-4 text-center">
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="C">C</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="Db">C# or Db</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="D">D</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="Eb">D# or Eb</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="E">E</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="F">F</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="Gb">F# or Gb</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="G">G</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="Ab">G# or Ab</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="A">A</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="Bb">A# or Bb</button>
+            <button class="btn btn-primary btn-sm my-2 ansbtn" data-note="B">B</button>
+        </div>
+        <div class="my-4 text-center">
+            <button class="btn btn-secondary mr-2" id="next">次の問題</button>
+        </div>
+    </div>
+    <script src="./js/close.js"></script>
+    <script src="./js/quiz.js"></script>
+</body>
+
+</html>

@@ -61,3 +61,7 @@ const guitar_file = "./sound/Guitar-C4.wav";
 const hihat_file = "./sound/Closed-Hi-Hat.wav";
 
 const origin = "C4";
+
+module.exports = {
+    fingerboard: fingerboard
+};
